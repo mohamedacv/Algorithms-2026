@@ -1,0 +1,14 @@
+def selection_sort(arr):  # دالة بترتب العناصر تصاعديًا
+    n = len(arr)  # طول المصفوفة
+    for i in range(n - 1):  # لوب على كل عنصر
+        min_index = i  # نفترض الحالي أصغر
+        for j in range(i + 1, n):  # نقارن بباقي العناصر
+            if arr[j] < arr[min_index]:  # لو لقينا أصغر
+                min_index = j  # نحدث الأصغر
+        arr[i], arr[min_index] = arr[min_index], arr[i]  # نبدّل الأماكن
+    return arr  # نرجع المصفوفة المرتبة
+
+numbers = [64, 30, 12, 27, 11]  # مصفوفة أرقام
+print("Original list:", numbers)  # قبل الترتيب
+sorted_numbers = selection_sort(numbers)  # ترتيب المصفوفة
+print("Sorted list:", sorted_numbers)  # بعد الترتيب
